@@ -18,7 +18,7 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     </head>
     <c:choose>
-        <c:when test="${usuario == null}">
+      <c:when test="${usuario == null}">
             <div class="background"></div>
             <div class="content">               
                 <h1>Tiene que iniciar sesión primero</h1>
@@ -38,7 +38,7 @@
                 <h1>No tiene acceso de ingresar a otra sesión por medio de url</h1>
                 <h3><a href="../login.jsp">(Volver al Login)</a></h3>              
             </div>
-        </c:when> 
+        </c:when>
         <c:when test="${usuario != null}">
             <body>
                 <div id="wrapper">
@@ -585,7 +585,7 @@
                 <!-- CUSTOM SCRIPTS -->
                 <script src="../assets/js/custom.js"></script>        
             </body>
-        </c:when>
+       </c:when>
         <c:otherwise>
         </c:otherwise>
     </c:choose>
