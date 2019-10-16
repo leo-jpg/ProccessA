@@ -78,7 +78,7 @@ public class UnidadInternaDAO implements Metodos<UnidadInterna>{
     }
 
     @Override
-    public int read(Usuario usuario) {
+    public Usuario read(Usuario usuario) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
