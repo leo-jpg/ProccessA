@@ -10,7 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>Agregar Proceso</title>
+<title>Modificar Proceso</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -30,6 +30,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <sql:query dataSource="${dataSource}" var="tipo">
             SELECT id_usuario, usuario from usuario
         </sql:query> 
+         <sql:query dataSource="${dataSource}" var="tipo1">
+            SELECT id_proceso, nombre from proceso
+        </sql:query> 
 	<div class="main">
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                     <div class="navbar-header">
@@ -38,10 +41,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </button>
                     </div>
                 </nav>
-		<h1 class="w3layouts_head">Agregar Proceso</h1>
+		<h1 class="w3layouts_head">Modificar Proceso</h1>
 		<div class="w3layouts_main_grid">
                     <form action="../procesoProceso" method="POST" class="w3_form_post">
 				<div class="w3_agileits_main_grid w3l_main_grid">
+                                    	<div class="agileits_main_grid w3_agileits_main_grid">
+					<span class="wthree_grid">
+						<label>Seleccione Proceso<i>:</i></label>
+                                                    <select id="category" name="cboProceso" required="">
+						 <c:forEach var="tipos" items="${tipo1.rows}">
+                                <option value="${tipos.id_proceso}">${tipos.nombre}</option>
+                            </c:forEach>
+						</select>
+					</span>
+				</div>
 					<span class="agileits_grid">
 						<label>Nombre Proceso<i>:</i></label>
 						<input type="text" name="txtNombreProceso" placeholder="Proceso 1" required="">
@@ -59,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="w3_main_grid">
 					<div class="w3_main_grid_right">
-                                            <input type="submit" name="btnAccion" value="Agregar">
+                                            <input type="submit" name="btnAccion" value="Modificar">
 					</div>
 				</div>
 			</form>

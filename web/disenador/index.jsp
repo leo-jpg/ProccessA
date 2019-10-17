@@ -74,9 +74,8 @@
                       <p class="slider--item-title">Eliminar Proceso</p>
                     </a>
                   </li>
-                    
                        <li class="slider--item">
-                           <a href="listarProceso.jsp">
+                           <a href="../procesoListarProceso">
                       <div class="slider--item-image">
                           <img src="assets/img/listarProceso.jpg" alt="">
                       </div>

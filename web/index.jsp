@@ -59,7 +59,7 @@ El actual Instituto de Salud Pública de Chile (ISP) remonta sus raíces histórica
         </div>
         -->
         <!--CLOSE MODAL-->
-  */
+  
       	<div class="footer">
     		TASK CONTROL 2019 &reg;
     	</div>    

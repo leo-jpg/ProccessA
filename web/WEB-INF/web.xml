@@ -48,6 +48,14 @@
         <servlet-name>ServletCerrarSesion</servlet-name>
         <servlet-class>Controlador.ServletCerrarSesion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletListarProceso</servlet-name>
+        <servlet-class>Controlador.ServletListarProceso</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletProceso</servlet-name>
+        <servlet-class>Controlador.ServletProceso</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletUsuario</servlet-name>
         <url-pattern>/procesoUsuario</url-pattern>
@@ -95,6 +103,14 @@
     <servlet-mapping>
         <servlet-name>ServletCerrarSesion</servlet-name>
         <url-pattern>/procesoCerrarSesion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletListarProceso</servlet-name>
+        <url-pattern>/procesoListarProceso</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletProceso</servlet-name>
+        <url-pattern>/procesoProceso</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
