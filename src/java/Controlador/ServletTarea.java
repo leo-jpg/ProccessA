@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import DAO.TareaDAO;
 import Modelo.Tarea;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -44,15 +45,17 @@ public class ServletTarea extends HttpServlet {
             throws ServletException, IOException {
         try {
             String responsable = request.getParameter("cboResponsable");
-            Date today = sdf.parse("18-10-2019");
-            sdf = new SimpleDateFormat("dd-MM-yyyy");
-            DateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy");
+            String plazo = request.getParameter("DtPlazo");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            java.util.Date
+            formato = sdf.parse(plazo);
+            java.sql.Date fecha = new java.sql.Date(formato.getDate());
             String descripcion = request.getParameter("txtDescripcion");
-            String cumplimiento = request.getParameter("txtCumplimiento");
+            int cumplimiento = Integer.parseInt(request.getParameter("nbCumplimiento"));
             int id_usu_asig = Integer.parseInt(request.getParameter("cboUsuario"));
             int id_indicador = 1;
             
-            Tarea tarea = new Tarea(responsable, plazo, descripcion, cumplimiento, id_usu_asig, id_indicador);
+            Tarea tarea = new Tarea(responsable, fecha, descripcion, cumplimiento, id_usu_asig, id_indicador);
             TareaDAO dao = new TareaDAO();
             
             if (dao.create(tarea)) {

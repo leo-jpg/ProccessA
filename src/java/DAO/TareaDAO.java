@@ -29,7 +29,7 @@ public class TareaDAO implements Metodos<Tarea>{
             pre.setString(1, generico.getResponsable());
             pre.setDate(2, generico.getPlazo());
             pre.setString(3, generico.getDescripcion());
-            pre.setString(4, generico.getCumplimiento());
+            pre.setInt(4, generico.getCumplimiento());
             pre.setInt(5, generico.getId_usuario_asignado());
             pre.setInt(6, generico.getIndicador_id_indicador());
 
@@ -37,9 +37,9 @@ public class TareaDAO implements Metodos<Tarea>{
                 return true;
             }
         }catch(Exception e){
-            
+            conexion.cerrarConexion();
         }finally{
-            
+            return false;
         }
     }
 

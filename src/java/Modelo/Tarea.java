@@ -16,14 +16,14 @@ public class Tarea {
     private String responsable;
     private Date plazo;
     private String descripcion;
-    private String cumplimiento;
+    private int cumplimiento;
     private int id_usuario_asignado;
     private int indicador_id_indicador;
 
     public Tarea() {
     }
 
-    public Tarea(String responsable, Date plazo, String descripcion, String cumplimiento, int id_usuario_asignado, int indicador_id_indicador) {
+    public Tarea(String responsable, Date plazo, String descripcion, int cumplimiento, int id_usuario_asignado, int indicador_id_indicador) {
         this.responsable = responsable;
         this.plazo = plazo;
         this.descripcion = descripcion;
@@ -34,7 +34,7 @@ public class Tarea {
     
     
 
-    public Tarea(int id_tarea, String responsable, Date plazo, String descripcion, String cumplimiento, int id_usuario_asignado, int indicador_id_indicador) {
+    public Tarea(int id_tarea, String responsable, Date plazo, String descripcion, int cumplimiento, int id_usuario_asignado, int indicador_id_indicador) {
         this.id_tarea = id_tarea;
         this.responsable = responsable;
         this.plazo = plazo;
@@ -76,11 +76,11 @@ public class Tarea {
         this.descripcion = descripcion;
     }
 
-    public String getCumplimiento() {
+    public int getCumplimiento() {
         return cumplimiento;
     }
 
-    public void setCumplimiento(String cumplimiento) {
+    public void setCumplimiento(int cumplimiento) {
         this.cumplimiento = cumplimiento;
     }
 

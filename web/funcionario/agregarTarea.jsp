@@ -43,7 +43,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </nav>
             <h1 class="w3layouts_head">Agregar Tarea</h1>
             <div class="w3layouts_main_grid">
-                <form action="" method="POST" class="w3_form_post">
+                <form action="../procesoTarea" method="POST" class="w3_form_post">
                     <div class="agileits_main_grid w3_agileits_main_grid">
                         <span class="wthree_grid">
                             <label>Responsable<i>:</i></label>
@@ -82,16 +82,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </select>
                         </span>
                     </div>
-                    <div class="agileits_main_grid w3_agileits_main_grid">
-                        <span class="wthree_grid">
-                            <label>Proceso<i>:</i></label>
-                            <select id="category" name="cboProceso" required="">
-                                <c:forEach var="tipos" items="${tipo2.rows}">
-                                    <option value="${tipos.id_proceso}">${tipos.nombre}</option>
-                                </c:forEach>
-                            </select>
-                        </span>
-                    </div>
+
                     <div class="w3_main_grid">
                         <div class="w3_main_grid_right">
                             <input type="submit" name="btnAccion" value="Agregar">
