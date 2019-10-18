@@ -64,7 +64,7 @@
                     </a>
                   </li>
                   <li class="slider--item slider--item-center">
-                    <a href="#0">
+                    <a href="agregarTarea.jsp">
                       <div class="slider--item-image">
                       <img src="assets/img/agregarTarea.jpg" alt="">
                       </div>
