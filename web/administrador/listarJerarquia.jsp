@@ -51,8 +51,11 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                            <span class="icon-bar"><a class="navbar-brand" href="administrador/menuAdmin.jsp">Volver</a></span>
+                            <span class="icon-bar"> <a class="navbar-brand" href="administrador/menuAdmin.jsp">Volver</a></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
                         </button>
+                       
                     </div>
                 </nav>
     <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
