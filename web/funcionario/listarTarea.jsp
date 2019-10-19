@@ -30,7 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                            <span class="icon-bar"> <a class="navbar-brand" href="index.jsp">Volver</a></span>
+                            <span class="icon-bar"> <a class="navbar-brand" href="funcionario/index.jsp">Volver</a></span>
                         </button>
                     </div>
                 </nav>

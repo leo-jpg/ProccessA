@@ -386,7 +386,7 @@ input[type="submit"],.agileits_copyright p a,input[type="reset"],.w3_main_grid_l
 		padding: 1em;
 	}
 	.w3layouts_main_grid span label,.w3layouts_main_grid input[type="text"], #category, #category1, #risk, #priority, .agileits_w3layouts_main_gridr input[type="time"], .w3layouts_main_grid input[type="email"], .w3layouts_main_grid textarea{
-		font-size: 13px;
+		font-size: 1px;
 	}
 	.w3layouts_main_grid span label i {
 		right: 60%;
