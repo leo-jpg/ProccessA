@@ -72,11 +72,11 @@
                     </a>
                   </li>
                   <li class="slider--item slider--item-right">
-                    <a href="#0">
+                    <a href="../procesoListaTarea">
                       <div class="slider--item-image">
                           <img src="assets/img/visualizarEstado.jpg" alt="">
                       </div>
-                      <p class="slider--item-title">Visualizar Estado</p>
+                      <p class="slider--item-title">Listar Tarea</p>
                     </a>
                   </li>
                      <li class="slider--item">
