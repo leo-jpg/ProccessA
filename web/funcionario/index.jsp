@@ -80,11 +80,11 @@
                     </a>
                   </li>
                      <li class="slider--item">
-                    <a href="#0">
+                         <a href="eliminarTarea.jsp">
                       <div class="slider--item-image">
-                          <img src="assets/img/reasignar.jpg" alt="">
+                          <img src="assets/img/eliminarTareaSubordinada.jpg" alt="">
                       </div>
-                      <p class="slider--item-title">Reasignar</p>
+                      <p class="slider--item-title">Eliminar Tarea</p>
                     </a>
                   </li>
                        <li class="slider--item">

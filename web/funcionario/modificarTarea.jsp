@@ -31,10 +31,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             SELECT id_tarea, descripcion from tarea
         </sql:query> 
         <sql:query dataSource="${dataSource}" var="tipo2">
-            SELECT id_usuario, usuario from usuario
+            SELECT id_usuario, usuario from usuario where rol_id_rol = 2
         </sql:query> 
-            <sql:query dataSource="${dataSource}" var="tipo3">
+            <sql:query dataSource="${dataSource}" var="tipo4">
             SELECT id_indicador, descripcion from indicador
+        </sql:query> 
+             <sql:query dataSource="${dataSource}" var="tipo3">
+            SELECT id_usuario, usuario from usuario where rol_id_rol = 4
         </sql:query> 
         <div class="main">
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -89,7 +92,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <span class="wthree_grid">
                             <label>Seleccione Usuario Asignado<i>:</i></label>
                             <select id="category" name="cboUsuario" required="">
-                                <c:forEach var="tipos" items="${tipo2.rows}">
+                                <c:forEach var="tipos" items="${tipo3.rows}">
                                     <option value="${tipos.id_usuario}">${tipos.usuario}</option>
                                 </c:forEach>
                             </select>
@@ -99,7 +102,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <span class="wthree_grid">
                             <label>Indicador<i>:</i></label>
                             <select id="category" name="cboIndicador" required="">
-                                <c:forEach var="tipos" items="${tipo3.rows}">
+                                <c:forEach var="tipos" items="${tipo4.rows}">
                                     <option value="${tipos.id_indicador}">${tipos.descripcion}</option>
                                 </c:forEach>
                             </select>

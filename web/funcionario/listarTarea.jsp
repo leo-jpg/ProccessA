@@ -10,7 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>Listar Proceso</title>
+<title>Modificar Proceso</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -34,7 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </button>
                     </div>
                 </nav>
-		<h1 class="w3layouts_head">Listar Proceso</h1>
+		<h1 class="w3layouts_head">Listar Tareas</h1>
 		<div class="w3layouts_main_grid">
                         <div class="input-group" style="color: white">    
                         <table border="2" style="width: 271px;">
@@ -42,16 +42,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>NOMBRE</th>
-                        <th>USUARIO</th>
+                        <th>RESPONSABLE</th>
+                        <th>PLAZO</th>
+                        <th>DESCRIPCION</th>
+                        <th>CUMPLIMIENTO</th>
+                        <th>USUARIO ASIGNADO</th>
+                        <th>INDICADOR</th>
                     </tr>           
                 </thead>
                 <c:forEach var="aux" items="${lista}">
                     <tbody>
                         <tr>
-                            <td>${aux.getId_proceso()}</td>
-                            <td>${aux.getNombre()}</td>
-                            <td>${aux.getUsuario_id_usuario()}</td>
+                            <td>${aux.getId_tarea()}</td>
+                            <td>${aux.getResponsable()}</td>
+                            <td>${aux.getPlazo()}</td>
+                            <td>${aux.getDescripcion()}</td>
+                            <td>${aux.getCumplimiento()}</td>
+                            <td>${aux.getId_usuario_asignado()}</td>
+                            <td>${aux.getIndicador_id_indicador()}</td>
                         </tr>
                     </tbody>
                 </c:forEach>

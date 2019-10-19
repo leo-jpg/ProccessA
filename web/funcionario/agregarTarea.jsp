@@ -28,10 +28,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <body>
         <sql:setDataSource var="dataSource" driver="oracle.jdbc.OracleDriver" url="jdbc:oracle:thin:@localhost:1521:XE" user="Task" password="admin"></sql:setDataSource>
         <sql:query dataSource="${dataSource}" var="tipo">
-            SELECT id_usuario, usuario from usuario
+            SELECT id_usuario, usuario from usuario where rol_id_rol = 2
         </sql:query> 
             <sql:query dataSource="${dataSource}" var="tipo2">
-            SELECT id_proceso, nombre from proceso
+           SELECT id_usuario, usuario from usuario where rol_id_rol = 4
         </sql:query> 
         <div class="main">
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -76,7 +76,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <span class="wthree_grid">
                             <label>Seleccione Usuario Asignado<i>:</i></label>
                             <select id="category" name="cboUsuario" required="">
-                                <c:forEach var="tipos" items="${tipo.rows}">
+                                <c:forEach var="tipos" items="${tipo2.rows}">
                                     <option value="${tipos.id_usuario}">${tipos.usuario}</option>
                                 </c:forEach>
                             </select>
