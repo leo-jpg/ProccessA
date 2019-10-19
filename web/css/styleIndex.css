@@ -90,6 +90,7 @@ section.sec1{
 	text-align: justify;	
 	font-size: 20px;
 	line-height: 30px;
+        margin-top: -200px;
 }
 
 .footer{
@@ -106,8 +107,7 @@ section.sec1{
 
 
 iframe{
-	margin-left:20px;
 	margin-top:140px;	
-	width:1305px;
-	height:800px;
+	width:1495px;
+	height:600px;
 }

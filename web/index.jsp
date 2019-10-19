@@ -29,7 +29,7 @@
     	<nav>
             <div class="logo"></div>
                 <ul>
-                    <li><a href="GUI/Inicio.php" target="centro">Inicio</a></li>
+                    <li><a href="inicio.jsp" target="centro">Inicio</a></li>
                     <li><a href="GUI/QuienesSomos.php" target="centro">Quienes Somos</a></li>
                     <li><a href="GUI/Ubicacion.php" target="centro">Ubicación</a></li>
                     <li><a href="login.jsp" class="active">Login</a></li>
@@ -37,11 +37,11 @@
                 </ul>
         </nav>        
         <section class="sec1">
-            <iframe name="centro" frameborder="1" scrolling="no"></iframe> 
+            <iframe name="centro" frameborder="0" scrolling="no"></iframe>
         </section>
         <section class="content">
-        	<p>Las raíces de la historia
-El actual Instituto de Salud Pública de Chile (ISP) remonta sus raíces históricas a 1892 cuando, con fecha 15 de septiembre de ese año, fue creado por Ley el Instituto de Higiene, bajo la dirección del Dr. Federico Puga Borne, quien fuera varias veces Ministro de Justicia e Instrucción Pública y de Interior.</p>
+        	<p>La empresa "Process SA" se dedica a asesorar a empresas de distintos rubros de ordenamiento y control de sus procesos y tareas.</p>
+                
         </section>
 
         <!--OPEN MODAL-->
