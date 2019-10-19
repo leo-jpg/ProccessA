@@ -18,6 +18,8 @@ import java.util.List;
  */
 public class TareaDAO implements Metodos<Tarea>{
     private static final String SQL_INSERT = "{call sp_insertar_tar(?,?,?,?,?,?)}";
+    private static final String SQL_UPDATE = "{call sp_modificar_tar(?,?,?,?,?,?,?)}";
+    private static final String SQL_DELETE = "{call sp_eliminar_tar(?)}";
     
     private static final Conexion conexion = Conexion.estado();
 
@@ -45,12 +47,42 @@ public class TareaDAO implements Metodos<Tarea>{
 
     @Override
     public boolean update(Tarea generico) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PreparedStatement pre;
+        try{
+            pre = conexion.getConnection().prepareCall(SQL_UPDATE);
+            pre.setInt(1, generico.getId_tarea());
+            pre.setString(2, generico.getResponsable());
+            pre.setDate(3, generico.getPlazo());
+            pre.setString(4, generico.getDescripcion());
+            pre.setInt(5, generico.getCumplimiento());
+            pre.setInt(6, generico.getId_usuario_asignado());
+            pre.setInt(7, generico.getIndicador_id_indicador());
+
+            if (pre.executeUpdate() > 0) {
+                return true;
+            }
+        }catch(Exception e){
+            conexion.cerrarConexion();
+        }finally{
+            return false;
+        }
     }
 
     @Override
     public boolean delete(Tarea generico) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PreparedStatement pre;
+        try{
+            pre = conexion.getConnection().prepareCall(SQL_DELETE);
+            pre.setInt(1, generico.getId_tarea());
+        
+            if (pre.executeUpdate() > 0) {
+                return true;
+            }
+        }catch(Exception e){
+            conexion.cerrarConexion();
+        }finally{
+            return false;
+        }
     }
 
     @Override

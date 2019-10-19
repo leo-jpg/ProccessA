@@ -39,6 +39,12 @@ public class ServletTarea extends HttpServlet {
         if (opcion.equals("Agregar")) {
             agregar(request, response);
         }
+        if (opcion.equals("Modificar")) {
+            modificar(request, response);
+        }
+        if (opcion.equals("Eliminar")) {
+            eliminar(request, response);
+        }
     }
 
     protected void agregar(HttpServletRequest request, HttpServletResponse response)
@@ -64,9 +70,59 @@ public class ServletTarea extends HttpServlet {
                 request.setAttribute("msjNO", "Error al agregar Tarea");
             }
         } catch (Exception e) {
-
+            request.setAttribute("msjNO", "Error: " + e.getMessage());
         } finally {
             response.sendRedirect("funcionario/agregarTarea.jsp");
+        }
+    }
+    
+     protected void modificar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            int id_tarea = Integer.parseInt(request.getParameter("cboID"));
+            String responsable = request.getParameter("cboResponsable");
+            String plazo = request.getParameter("DtPlazo");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            java.util.Date
+            formato = sdf.parse(plazo);
+            java.sql.Date fecha = new java.sql.Date(formato.getDate());
+            String descripcion = request.getParameter("txtDescripcion");
+            int cumplimiento = Integer.parseInt(request.getParameter("nbCumplimiento"));
+            int id_usu_asig = Integer.parseInt(request.getParameter("cboUsuario"));
+            int id_indicador = Integer.parseInt(request.getParameter("cboIndicador"));
+            
+            Tarea tarea = new Tarea(id_tarea, responsable, fecha, descripcion, cumplimiento, id_usu_asig, id_indicador);
+            TareaDAO dao = new TareaDAO();
+            
+            if (dao.update(tarea)) {
+                request.setAttribute("msjOK", "Tarea modificada correctamente");
+            } else {
+                request.setAttribute("msjNO", "Error al modificar Tarea");
+            }
+        } catch (Exception e) {
+            request.setAttribute("msjNO", "Error: " + e.getMessage());
+        } finally {
+            response.sendRedirect("funcionario/modificarTarea.jsp");
+        }
+    }
+     
+      protected void eliminar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            int id_tarea = Integer.parseInt(request.getParameter("cboID"));
+            
+            Tarea tarea = new Tarea(id_tarea);
+            TareaDAO dao = new TareaDAO();
+            
+            if (dao.delete(tarea)) {
+                request.setAttribute("msjOK", "Tarea eliminada correctamente");
+            } else {
+                request.setAttribute("msjNO", "Error al eliminar Tarea");
+            }
+        } catch (Exception e) {
+            request.setAttribute("msjNO", "Error: " + e.getMessage());
+        } finally {
+            response.sendRedirect("funcionario/eliminarTarea.jsp");
         }
     }
 

@@ -26,7 +26,7 @@
         <header class="header">
           <a class="header--logo" href="#0">
             <img src="assets/img/logo.png" alt="Global">
-            <p>PROCESS SA</p>
+            <p>PROCESS SAAAAA</p>
           </a>
           <div class="header--nav-toggle">
             <span></span>

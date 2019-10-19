@@ -75,6 +75,9 @@ public class ServletLogin extends HttpServlet {
                 } else if (usuario.getRol_id_rol()==3) {
                     request.getSession().setAttribute("usuario", usuario.getUsuario());
                     response.sendRedirect("disenador/index.jsp");
+                } else if (usuario.getRol_id_rol()==4) {
+                    request.getSession().setAttribute("usuario", usuario.getUsuario());
+                    response.sendRedirect("subFuncionario/index.jsp");
                 }
                 }catch(Exception e){
                      request.getSession().setAttribute("mensaje", "Error: " + e.getMessage());

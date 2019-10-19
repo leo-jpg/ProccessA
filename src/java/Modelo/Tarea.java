@@ -23,6 +23,12 @@ public class Tarea {
     public Tarea() {
     }
 
+    public Tarea(int id_tarea) {
+        this.id_tarea = id_tarea;
+    }
+    
+    
+
     public Tarea(String responsable, Date plazo, String descripcion, int cumplimiento, int id_usuario_asignado, int indicador_id_indicador) {
         this.responsable = responsable;
         this.plazo = plazo;
